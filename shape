@@ -1,0 +1,64 @@
+public class Mainshape {
+	public static void main(String[] args)
+	{
+		int radius,wid,len;
+		Scanner scn = new Scanner(System.in);
+	
+		System.out.println("Enter Width For Rect");
+		wid = scn.nextInt();
+		System.out.println("Enter Length For Rect");
+		len = scn.nextInt();
+		Rectangle objRectangle = new Rectangle(wid, len, "RECTANGLE");		
+		System.out.println(objRectangle.shapeNAme);
+		System.out.println("area is"  + objRectangle.area(len, wid));
+		
+		System.out.println("Enter Side For Square");
+		wid = scn.nextInt();
+		Square objsquare = new Square(wid);		
+	    System.out.println(objsquare.shapeNAme);
+		
+		System.out.println("Enter radius of circle");
+	    radius = scn.nextInt();
+		Circle objCircle = new Circle (radius,"Circle");
+		System.out.println(objCircle.shapeNAme);
+	}
+
+}
+public class Rectangle extends Shape {
+	int width,length;
+	public Rectangle(int width, int length,String shapeName{
+		super(shapename);
+	}
+	public int area(int len, int wid)
+	{
+		return len*wid;
+	}
+	
+}
+
+public class shape {
+	
+	public String shapename;
+	
+	public shape(String shapename){
+		this.Nameofshape=shapename;
+			}
+}
+
+public class Square extend Rectangle {
+public Square(int side)
+{
+		super(side, side, "SQUARE");
+		
+	}
+
+}
+
+public class circle extends shape {
+
+	public int radius;
+	public Circle (int radius,String shapename){
+		super (shapename);
+	}
+	
+}
