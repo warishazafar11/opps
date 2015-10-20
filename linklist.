@@ -1,0 +1,167 @@
+public class Main {
+	public static void main(String[] args)
+ 	{ 
+   linklist  MyList= new linklist();
+   MyList.add(2);
+   MyList.add(6);
+   MyList.add(4);
+   MyList.add(7);
+   MyList.add(5);
+   MyList.add(1);
+   MyList.add(3);
+   MyList.index(1);
+   MyList.sort();
+   
+   System.out.println(MyList.i);
+   MyList.display();
+}
+}
+
+public class linklist extends list {
+	
+	
+	 
+	public nodes list;
+	public nodes First=null;
+	public nodes Last=null;
+	public int i=0;
+	public int j;
+	public int h;
+	public int num;
+	
+	public void add(int num){
+		nodes list= new nodes(num,null,null);
+		i++;
+		if(First==null){
+			First=list;
+			Last=First;
+		}
+			else
+			{
+			Last.next=list;
+             list.previous=Last;
+			Last=list;
+			}
+	}
+
+	public int index(int num){
+	
+		
+		nodes ptr=First;
+		
+		for(j=1;j<=i;j++){
+			
+			if(ptr.num==num)
+			{
+			h=j;
+			}
+			ptr=ptr.next;}
+		return h;
+	}
+	
+
+			
+	        public void remove(){
+			nodes ptr=First;
+			Last=Last.previous;
+			Last.next=null;
+            i--;
+	        }
+		
+	public  void search(int num){
+		index(num);
+		nodes ptr=First;
+		for(j=1;j<i;j++){
+			if(ptr.num==num)
+			{
+				System.out.println("the number is at post"+h);
+			}
+		ptr=ptr.next;}
+	}
+	
+	public void sort(){
+		nodes ptr=First;
+		
+	for(j=1;j<i;j++)
+	{
+		nodes a=ptr;
+		nodes b=ptr.next;
+		if(a.num>b.num){
+		int x=a.num;
+		a.num=b.num;
+		b.num=x;}
+	ptr=ptr.next;}
+	}
+	public void update(int num,int pos,int val){
+		nodes ptr=First;
+	    index(num);
+	    pos=h;
+		for(j=1;j<i;j++){
+			if(j==pos)
+			{
+				ptr.num=val;
+			}
+		ptr=ptr.next;}
+		
+	}
+	public void display(){
+        if (i == 0) 
+
+        {
+
+            System.out.println("empty");
+
+            return;
+        }
+       
+ nodes ptr=First;
+ System.out.print(First.num+ " ");
+
+ ptr = First.next;
+        
+    while (ptr.next != null)
+
+    {
+
+        System.out.print(ptr.num+ " ");
+
+        ptr= ptr.next;
+
+    }
+    System.out.println(ptr.num);
+	}
+
+		
+	}
+	
+public class nodes {
+	 public int num;
+	 public nodes previous ;
+	 public nodes next;
+	
+	 public nodes()
+	 {
+			num=0;
+			next=null;
+	 }
+	 public nodes(int num , nodes previous,nodes next){
+		this.num=num;
+		this.next=next;
+		this.previous=previous;
+		 
+		
+	}
+
+}
+ public abstract class list {
+	public abstract void  add(int num);
+	public abstract void remove();
+	public abstract void sort();
+	public abstract void search(int num);
+	public abstract void display();
+	public abstract void update(int num,int pos,int val);
+	
+}
+
+
+	
