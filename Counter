@@ -1,0 +1,129 @@
+public class main {
+
+	public static void main(String[] args) {
+
+	
+		clock obj = new clock();
+		int x=0;
+			while(x <= 7200)
+		{
+			x++;
+			obj.tick();
+			
+	
+		alarmclock obja = new alarmclock();
+		obja.setAlarm(1,7,5);
+		
+		
+		while(x <= 7200)
+		{
+			x++;
+			obja.tick();
+			
+		}
+		
+		}
+}
+public class counter {
+	 private int count, base;
+	 public counter(int  baseVal)  
+     {
+   	  base=baseVal;
+     }
+     public void increment( )  
+     {
+   	  
+   	  count++;
+   	  if(count == base)
+   	  {
+   		  reset();
+   	  }
+   	  
+     }
+     public void reset( )  
+     {
+   	  count=0;
+     }
+     public int viewCount( ) 
+     {
+   	  return count;
+     }
+}
+
+public class clock {
+	private counter  hours, mins, secs;
+    public clock( )
+    {
+  	  
+		hours = new counter(24);
+		mins = new counter(60);
+		secs = new counter(60);
+	
+    }
+    
+    public  int viewHr()
+    {
+  	  return hours.viewCount();
+    }
+    public  int viewMin()
+    {
+  	  return mins.viewCount();
+    }
+    public  int viewSec()
+    {
+  	  return secs.viewCount();
+    }
+    
+    public void tick( ) 
+    {
+	  
+  	  System.out.println(hours.viewCount() + ":" +mins.viewCount() + ":" + secs.viewCount());
+  	  
+		secs.increment( );
+		if (secs.viewCount( ) == 0) 
+		{	
+		       mins.increment( );
+		       if((secs.viewCount( )==0) && (mins.viewCount( ) == 0))
+			hours.increment( );
+		}
+    }
+}
+
+public class clock {
+	private counter  hours, mins, secs;
+    public clock( )
+    {
+  	  
+		hours = new counter(24);
+		mins = new counter(60);
+		secs = new counter(60);
+	
+    }
+    
+    public  int viewHr()
+    {
+  	  return hours.viewCount();
+    }
+    public  int viewMin()
+    {
+  	  return mins.viewCount();
+    }
+    public  int viewSec()
+    {
+  	  return secs.viewCount();
+    }
+    
+    public void tick( ) 
+    {
+	  
+  	  System.out.println(hours.viewCount() + ":" +mins.viewCount() + ":" + secs.viewCount());
+  	  
+		secs.increment( );
+		if (secs.viewCount( ) == 0) 
+		{	
+		       mins.increment( );
+		       if((secs.viewCount( )==0) && (mins.viewCount( ) == 0))
+			hours.increment( );
+		}
+    }
+}
