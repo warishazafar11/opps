@@ -1,0 +1,67 @@
+
+public class AnimalHouse {
+
+	
+	public static void main(String[] args){
+		Dog Lassie=new Dog("bow wow","--i run");
+		Bird Tweetybird=new Bird("tweet-tweet","--i fly");
+		Animal cow=new Animal("Cow","mow-mow","--i walk");
+		
+		
+		
+		System.out.println(Lassie.speak());
+		System.out.println(Tweetybird.speak());
+		System.out.println(cow.speak());
+		System.out.println(Lassie.move());
+		System.out.println(Tweetybird.move());
+		System.out.println(cow.move());
+	}
+	
+	
+	
+}
+
+public class Animal {
+	
+	public String name;
+	public String speak;
+	public String move;
+	
+	public Animal(String name ,String speak,String move)
+	{
+		this.name=name;
+		this.speak=speak;
+		this.move=move;
+	}
+public String speak(){
+	return speak;
+}
+public String move(){
+	return move;
+}
+}
+public class Bird extends Animal {
+
+	
+	public String speak;
+	public String move;
+public Bird(String speak,String move){
+	
+		super("Bird",speak,move);
+	}
+
+	
+	
+}
+public class Dog extends Animal{
+	
+	
+	public String speak;
+	public String move;
+	public Dog(String speak,String move){
+		
+		super("Dog",speak,move);
+	}
+
+}
+
